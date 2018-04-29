@@ -58,4 +58,4 @@ typings/
 .env
 
 # MAC
-.DS_Store
+src/.DS_Store
