@@ -11,12 +11,31 @@
   },
   "babel": {
     "plugins": [
+      "transform-es2015-destructuring",
+      "transform-es2015-parameters",
       "react-hot-loader/babel"
     ],
     "presets": [
       "react",
-      "es2015"
-    ]
+      [
+        "env",
+        {
+          "targets": {
+           "browsers": [ "last 2 Chrome versions"]
+          },
+          "include": ["transform-es2015-classes"]
+        }
+      ],
+      "stage-2"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements"
+        ]
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -34,7 +53,15 @@
     "pg": "^6.2.4",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -47,12 +74,14 @@
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.11.0",
     "react-hot-loader": "^4.1.2",
-    "redbox-react": "^1.6.0",
+    "redux-freeze": "^0.1.5",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",

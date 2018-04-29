@@ -1,0 +1,41 @@
+export const GET_REQUEST = 'agents/GET_REQUEST'
+export const GET_SUCCESS = 'agents/GET_SUCCESS'
+export const GET_ERROR = 'agents/GET_ERROR'
+
+export const SAVE_REQUEST = 'agents/SAVE_REQUEST'
+export const SAVE_SUCCESS = 'agents/SAVE_SUCCESS'
+export const SAVE_ERROR = 'agents/SAVE_ERROR'
+
+export const GET_FORM_REQUEST = 'agents/GET_FORM_REQUEST'
+export const GET_FORM_SUCCESS = 'agents/GET_FORM_SUCCESS'
+export const GET_FORM_ERROR = 'agents/GET_FORM_ERROR'
+
+export const SAVE_FORM_REQUEST = 'agents/SAVE_FORM_REQUEST'
+export const SAVE_FORM_SUCCESS = 'agents/SAVE_FORM_SUCCESS'
+export const SAVE_FORM_ERROR = 'agents/SAVE_FORM_ERROR'
+
+export const SAVE_AVAILABILITY_REQUEST = 'agents/SAVE_AVAILABILITY_REQUEST'
+export const SAVE_AVAILABILITY_SUCCESS = 'agents/SAVE_AVAILABILITY_SUCCESS'
+export const SAVE_AVAILABILITY_ERROR = 'agents/SAVE_AVAILABILITY_ERROR'
+
+export const SAVE_KYC_AVAILABILITY_REQUEST = 'agents/SAVE_KYC_AVAILABILITY_REQUEST'
+export const SAVE_KYC_AVAILABILITY_SUCCESS = 'agents/SAVE_KYC_AVAILABILITY_SUCCESS'
+export const SAVE_KYC_AVAILABILITY_ERROR = 'agents/SAVE_KYC_AVAILABILITY_ERROR'
+
+export const ORG_AGENTS_REQUEST = 'agents/ORG_AGENTS_REQUEST'
+export const ORG_AGENTS_SUCCESS = 'agents/ORG_AGENTS_SUCCESS'
+export const ORG_AGENTS_ERROR = 'agents/ORG_AGENTS_ERROR'
+
+export const GET_ORGS_REQUEST = 'agents/GET_ORGS_REQUEST'
+export const GET_ORGS_SUCCESS = 'agents/GET_ORGS_SUCCESS'
+export const GET_ORGS_ERROR = 'agents/GET_ORGS_ERROR'
+
+export const FETCH_REVIEWS_REQUEST = 'agents/FETCH_REVIEWS_REQUEST'
+export const FETCH_REVIEWS_SUCCESS = 'agents/FETCH_REVIEWS_SUCCESS'
+export const FETCH_REVIEWS_ERROR = 'agents/FETCH_REVIEWS_ERROR'
+
+export const IMPORT_AGENTS = 'agents/IMPORT_AGENTS'
+
+export const CREATE_AGENT_REQUEST = 'agents/CREATE_AGENT_REQUEST'
+export const CREATE_AGENT_SUCCESS = 'agents/CREATE_AGENT_SUCCESS'
+export const CREATE_AGENT_ERROR = 'agents/CREATE_AGENT_ERROR'
