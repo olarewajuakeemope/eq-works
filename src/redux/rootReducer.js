@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { reducer as form } from 'redux-form'
 import { routerReducer as router } from 'react-router-redux'
-import agents from './agents/reducer'
+import stats from './stats/reducer'
 
 export default combineReducers({
   router,
-  agents,
+  stats,
   form,
 })

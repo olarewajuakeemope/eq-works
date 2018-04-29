@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import '../styles/main.css'
 
-const BoxLayout = () => <div>Hello World!</div>
+const BoxLayout = () => <h2>Hello World!</h2>
 
 export default () => (
   <Switch>

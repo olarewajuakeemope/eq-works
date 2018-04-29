@@ -1,8 +1,8 @@
 import { takeLatest, all, fork, } from 'redux-saga/effects'
-import agents from './agents/sagas'
+import stats from './stats/sagas'
 
 export default function* root() {
   yield all([
-    fork(agents),
+    fork(stats),
   ])
 }
