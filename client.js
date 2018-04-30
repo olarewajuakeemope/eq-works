@@ -10,8 +10,6 @@ const app = new Koa()
 const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig
 const compiler = webpack(config)
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
 const webpackMiddleware = devMiddleware(compiler, {
   publicPath: config.output.publicPath,
 })
