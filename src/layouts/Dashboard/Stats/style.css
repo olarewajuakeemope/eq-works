@@ -1,0 +1,24 @@
+.StatsLayout {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.StatsLayout__component {
+  display: flex;
+  flex: 1;
+  flex-flow: column wrap;
+}
+
+.StatsLayout__sidebar {
+  display: flex;
+  flex-flow: column;
+  flex: 0 auto;
+  border-right: 1px solid #d3d3d3;
+  z-index: 0;
+}
+
+.StatsLayout__stats {
+  z-index: 1;
+  background: #efeff4;
+}

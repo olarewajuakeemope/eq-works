@@ -1,19 +1,22 @@
 import React from 'react'
-import Stats from './Stats'
-import Map from './Map'
+import Link from './Link'
 import './style.css'
 
-const Links = () => {
-  const links = [
-    Map,
-    Stats,
-  ]
+const links = [
+  {
+    name: 'Map',
+    link: '/map',
+  },
+  {
+    name: 'Stats',
+    link: '/stats',
+  },
+]
 
-  return (
-    <div className='Links'>
-      {links.map((Link, i) => <Link key={i} />)}
-    </div>
-  )
-}
+const Links = () => (
+  <div className='Links'>
+    {links.map(({ link, name }, i) => <Link key={i} link={link} name={name} />)}
+  </div>
+)
 
 export default Links

@@ -1,0 +1,37 @@
+.SideBar__content {
+  overflow-y: hidden;
+  flex: 1;
+}
+
+.SideBar__content__component {
+  cursor: pointer;
+  display: flex;
+  line-height: 16px;
+  height: 105px;
+  padding: 14px 0 0;
+  font-weight: 300;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.SideBar__content__component > div {
+  transition: transform 0.25s;
+}
+
+.SideBar__content__wrapper {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideBar__content__body {
+  overflow: hidden;
+  height: 34px;
+  width: 239px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 900px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  color: rgb(42, 182, 246);
+  line-height: 17px;
+}

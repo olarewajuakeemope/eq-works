@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import webpack from 'webpack'
 import historyApiFallback from '@overra/koa-history-api-fallback'
-import {devMiddleware, hotMiddleware} from 'koa-webpack-middleware'
+import { devMiddleware, hotMiddleware } from 'koa-webpack-middleware'
 import devConfig from './webpack.dev'
 import prodConfig from './webpack.prod'
 

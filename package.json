@@ -52,7 +52,6 @@
   },
   "homepage": "https://github.com/EQWorks/ws-product-nodejs#readme",
   "dependencies": {
-    "classnames": "^2.2.5",
     "express": "^4.15.3",
     "history": "^4.7.2",
     "pg": "^6.2.4",
