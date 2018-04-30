@@ -1,57 +1,59 @@
 import express from 'express'
-import pg from 'pg'
+import cors from 'cors'
 import rateLimitter from './middleware/rateLimitter'
+import { paginateQuery, handleQuery } from './middleware/queryHandlers'
 
 const app = express()
 const limitRate = rateLimitter()
-// configs come from standard PostgreSQL env vars
-// https://www.postgresql.org/docs/9.6/static/libpq-envars.html
-const pool = new pg.Pool()
 
-const queryHandler = (req, res, next) => {
-  pool.query(req.sqlQuery).then((r) => {
-    return res.json(r.rows || [])
-  }).catch(next)
-}
+// enable CORS
+app.use(cors({
+  origin: ['http://localhost:3000'],
+  methods: ['POST', 'GET'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+}))
 
+// apply middleware
 app.use('/stats/hourly', limitRate)
 
+// setup routes
 app.get('/', (req, res) => {
   res.send('Welcome to EQ Works 😎')
 })
 
 app.get('/events/hourly', (req, res, next) => {
+  req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
     SELECT date, hour, events
     FROM public.hourly_events
     ORDER BY date, hour
-    LIMIT 168;
   `
   return next()
-}, queryHandler)
+}, paginateQuery)
 
 app.get('/events/daily', (req, res, next) => {
+  req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
     SELECT date, SUM(events) AS events
     FROM public.hourly_events
     GROUP BY date
     ORDER BY date
-    LIMIT 7;
   `
   return next()
-}, queryHandler)
+}, paginateQuery)
 
 app.get('/stats/hourly', (req, res, next) => {
+  req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
     SELECT date, hour, impressions, clicks, revenue
     FROM public.hourly_stats
     ORDER BY date, hour
-    LIMIT 168;
   `
   return next()
-}, queryHandler)
+}, paginateQuery)
 
 app.get('/stats/daily', (req, res, next) => {
+  req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
     SELECT date,
         SUM(impressions) AS impressions,
@@ -60,10 +62,9 @@ app.get('/stats/daily', (req, res, next) => {
     FROM public.hourly_stats
     GROUP BY date
     ORDER BY date
-    LIMIT 7;
   `
   return next()
-}, queryHandler)
+}, paginateQuery)
 
 app.get('/poi', (req, res, next) => {
   req.sqlQuery = `
@@ -71,7 +72,7 @@ app.get('/poi', (req, res, next) => {
     FROM public.poi;
   `
   return next()
-}, queryHandler)
+}, handleQuery)
 
 app.listen(process.env.PORT || 5555, (err) => {
   if (err) {

@@ -1,8 +1,14 @@
-import { takeEvery, fork } from 'redux-saga/effects'
+import { takeEvery, fork, call } from 'redux-saga/effects'
+import { getStats } from '../../api'
 import * as t from './actionTypes'
 
-export function* getStatsSaga({ endpoint }){
-  console.log(endpoint)
+export function* getStatsSaga({ endpoint }) {
+  try {
+    const stats = yield call(getStats, endpoint)
+    console.log(stats)
+  } catch (error) {
+    // TODO: handle error
+  }
 }
 
 function* watchGetStatsSaga() {
