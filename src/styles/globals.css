@@ -1,0 +1,28 @@
+html {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gotham SSm A', 'Gotham SSm B';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+a {
+  color: #444444;
+  text-decoration: none;
+}
+
+button {
+  text-transform: uppercase;
+}
+button:focus {
+  outline: 0;
+}
+
+p {
+  color: #444444;
+}

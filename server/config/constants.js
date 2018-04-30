@@ -5,5 +5,5 @@ export default {
     max: 5,
     statusCode: 429,
     message: 'Too many requests, please try again later.',
-  }
+  },
 }
