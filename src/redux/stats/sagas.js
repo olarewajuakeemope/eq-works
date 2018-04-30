@@ -1,8 +1,8 @@
-import { takeEvery, all, call, put, fork, select } from 'redux-saga/effects'
+import { takeEvery, fork } from 'redux-saga/effects'
 import * as t from './actionTypes'
 
-export function* getStatsSaga({ id, lang }){
-  console.log(id, lang)
+export function* getStatsSaga({ endpoint }){
+  console.log(endpoint)
 }
 
 function* watchGetStatsSaga() {

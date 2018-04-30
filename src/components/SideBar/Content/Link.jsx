@@ -1,8 +1,9 @@
 import React from 'react'
 import './style.css'
 
-const test = ({ title, endpoint }) => (
+const Link = ({ title, endpoint, onClick }) => (
   <div
+    onClick={() => onClick(endpoint)}
     className='SideBar__content__component'>
     <div className='SideBar__content__wrapper'>
       <div className='SideBar__content__body'>
@@ -12,4 +13,4 @@ const test = ({ title, endpoint }) => (
   </div>
 )
 
-export default test
+export default Link

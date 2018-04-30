@@ -1,8 +1,8 @@
 import * as t from './actionTypes'
 
-export function getStats(stats){
+export function getStats(endpoint){
   return {
     type: t.GET_REQUEST,
-    stats,
+    endpoint,
   }
 }

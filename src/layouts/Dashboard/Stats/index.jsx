@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import SideBar from '../../../components/SideBar'
 import StatsContainer from '../../../containers/StatsContainer'
 import './style.css'
@@ -9,7 +10,7 @@ const StatsLayout = () => (
       <SideBar />
     </div>
     <div className='StatsLayout__component StatsLayout__stats'>
-      <StatsContainer />
+      <Route component={StatsContainer} />
     </div>
   </div>
 )
