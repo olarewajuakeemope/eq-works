@@ -1,9 +1,9 @@
-.SideBar__content {
+.Table__Component__Sidebar__content {
   overflow-y: hidden;
   flex: 1;
 }
 
-.SideBar__content__component {
+.Table__Component__Sidebar__Content__Link__wrapper {
   cursor: pointer;
   display: flex;
   line-height: 16px;
@@ -13,17 +13,17 @@
   border-bottom: 1px solid rgb(211, 211, 211);
 }
 
-.SideBar__content__component > div {
+.Table__Component__Sidebar__Content__Link__wrapper > div {
   transition: transform 0.25s;
 }
 
-.SideBar__content__wrapper {
+.Table__Component__Sidebar__Content__Link__body {
   width: 264px;
   display: flex;
   flex-direction: column;
 }
 
-.SideBar__content__body {
+.Table__Component__Sidebar__Content__link {
   overflow: hidden;
   height: 34px;
   width: 239px;

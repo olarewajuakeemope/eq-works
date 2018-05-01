@@ -4,7 +4,7 @@ import PaginationInputContainer from 'containers/Table/Pagination/Input'
 import './style.css'
 
 const BodyLayout = () => (
-  <div className='TableBody'>
+  <div className='Dashboard__Table__Panel__Body'>
     <PaginationBodyContainer />
     <PaginationInputContainer />
   </div>

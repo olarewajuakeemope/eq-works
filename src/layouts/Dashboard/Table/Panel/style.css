@@ -1,10 +1,10 @@
-.TableLayout {
+.Dashboard__Table__Panel__Layout {
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
 }
 
-.TableLayout__header {
+.Dashboard__Table__Panel__Layout__header {
   display: flex;
   justify-content: space-between;
   flex: none;
@@ -12,12 +12,12 @@
   border-bottom: 1px solid #dddddd;
 }
 
-.TableLayout__body {
+.Dashboard__Table__Panel__Layout__body {
   display: flex;
   flex: 1;
 }
 
-.TableLayout__table {
+.Dashboard__Table__Panel__Layout__table {
   display: flex;
   flex: 1;
 }

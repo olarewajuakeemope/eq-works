@@ -4,9 +4,9 @@ import './style.css'
 const Link = ({ title, endpoint, onClick }) => (
   <div
     onClick={() => onClick(title, endpoint)}
-    className='SideBar__content__component'>
-    <div className='SideBar__content__wrapper'>
-      <div className='SideBar__content__body'>
+    className='Table__Component__Sidebar__Content__Link__wrapper'>
+    <div className='Table__Component__Sidebar__Content__Link__body'>
+      <div className='Table__Component__Sidebar__Content__link'>
         {title}
       </div>
     </div>

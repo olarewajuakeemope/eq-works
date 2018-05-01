@@ -5,12 +5,12 @@ import BodyLayout from './Body'
 import './style.css'
 
 const TableLayout = () => (
-  <div className='TableLayout'>
-    <div className='TableLayout__header'>
+  <div className='Dashboard__Table__Panel__Layout'>
+    <div className='Dashboard__Table__Panel__Layout__header'>
       <Route component={Header} />
     </div>
-    <div className='TableLayout__body'>
-      <div className='TableLayout__table'>
+    <div className='Dashboard__Table__Panel__Layout__body'>
+      <div className='Dashboard__Table__Panel__Layout__table'>
         <BodyLayout />
       </div>
     </div>

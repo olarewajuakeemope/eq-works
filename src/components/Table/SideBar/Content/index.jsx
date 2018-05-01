@@ -22,7 +22,7 @@ const links = [
 ]
 
 const Content = () => (
-  <div className='SideBar__content'>
+  <div className='Table__Component__Sidebar__content'>
     {links.map(({ title, endpoint }, i) =>
       <Link key={i} title={title} endpoint={endpoint} />)}
   </div>
