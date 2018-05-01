@@ -5,6 +5,7 @@ interface StatsInterface {
 }
 
 export interface TableState {
+  title: null | string
   isLoading: boolean
   stats: StatsInterface
 }
@@ -16,6 +17,7 @@ export interface FetchSuccess {
 
 export interface FetchRequest {
   type: types.GET_REQUEST
+  title: string
 }
 
 export interface FetchError {

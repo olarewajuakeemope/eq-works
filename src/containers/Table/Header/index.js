@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import { getStats } from 'redux/table/selectors'
+import { getStatsTitle } from 'redux/table/selectors'
 import Header from 'components/Table/Header'
 
 const mapStateToProps = (state) => {
-  const { title } = getStats(state)
+  const title = getStatsTitle(state)
   return {
     title,
   }

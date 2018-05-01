@@ -3,6 +3,7 @@
 declare module 'containers/Root'
 declare module 'redux/configureStore'
 declare module 'redux-freeze'
+declare module 'react-js-pagination'
 
 // globals
 

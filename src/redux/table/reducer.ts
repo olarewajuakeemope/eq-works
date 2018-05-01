@@ -6,8 +6,9 @@ interface ActionHandler {
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.GET_REQUEST]: state => ({
+  [t.GET_REQUEST]: (state, { title }: I.FetchRequest) => ({
     ...state,
+    title,
     isLoading: true,
   }),
   [t.GET_REQUEST_SUCCESS]: (state, { stats }: I.FetchSuccess) => ({
@@ -23,7 +24,8 @@ const ACTION_HANDLERS: ActionHandler = {
 
 const initialState = {
   stats: {},
-  isLoading: true,
+  title: null,
+  isLoading: false,
 }
 
 export default function reducer(state = initialState, action: I.TableInterfaces) {

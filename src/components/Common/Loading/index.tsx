@@ -6,7 +6,7 @@ interface LoadingProps {
   delay?: number
   delayUnit?: string
   loading?: boolean
-  children: ReactNode
+  children: ReactNode | HTMLDivElement
 }
 
 const Loading = ({ bullets = 4, delay = 75, delayUnit = 'ms', loading = false, children }: LoadingProps) => {
