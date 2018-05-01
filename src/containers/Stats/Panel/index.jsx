@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import StatsLayout from '../../../layouts/Dashboard/Stats/StatsPanel'
-import Loading from '../../../components/Common/Loading'
-import { isLoading } from '../../../redux/stats/selectors'
+import StatsLayout from 'layouts/Dashboard/Stats/StatsPanel'
+import Loading from 'components/Common/Loading'
+import { isLoading } from 'redux/stats/selectors'
 
 const mapStateToProps = (state, props) => {
   return {

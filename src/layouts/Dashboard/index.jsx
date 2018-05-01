@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Header from '../../components/Header'
-import DataInterfaceRouting from '../../routes/Data'
+import Header from 'components/Header'
+import DataInterfaceRouting from 'routes/Data'
 import './style.css'
 
 const DashboardLayout = () => (

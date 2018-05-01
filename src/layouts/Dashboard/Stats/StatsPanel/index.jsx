@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import StatsHeader from '../../../../containers/Stats/Header'
+import StatsHeader from 'containers/Stats/Header'
 import StatsBodyLayout from './StatsBody'
 import './style.css'
 

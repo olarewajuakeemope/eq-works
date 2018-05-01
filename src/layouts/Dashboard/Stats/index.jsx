@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import SideBar from '../../../components/SideBar'
-import StatsContainer from '../../../containers/Stats/Panel'
+import SideBar from 'components/SideBar'
+import StatsContainer from 'containers/Stats/Panel'
 import './style.css'
 
 const StatsLayout = () => (

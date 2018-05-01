@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../../containers/Stats/SideBar/Link'
+import Link from 'containers/Stats/SideBar/Link'
 import './style.css'
 
 const links = [

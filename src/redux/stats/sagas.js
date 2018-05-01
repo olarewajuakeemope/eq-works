@@ -1,5 +1,5 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
-import { getStats } from '../../api'
+import { getStats } from 'api'
 import * as t from './actionTypes'
 
 function* getStatsSaga({ title, endpoint }) {
