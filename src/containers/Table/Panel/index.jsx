@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import TableLayout from 'layouts/Dashboard/Table/Panel'
 import Loading from 'components/Common/Loading'
-import { isLoading } from 'redux/stats/selectors'
+import { isLoading } from 'redux/table/selectors'
 
 const mapStateToProps = (state, props) => {
   return {

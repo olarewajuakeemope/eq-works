@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getStats } from 'redux/stats/selectors'
+import { getStats } from 'redux/table/selectors'
 import Header from 'components/Table/Header'
 
 const mapStateToProps = (state) => {

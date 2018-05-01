@@ -8,6 +8,14 @@ import { createLogger } from 'redux-logger'
 import rootReducer from './rootReducer'
 import rootSaga from './rootSaga'
 
+interface Module extends NodeModule {
+  hot: {
+    accept: (reducer: string, fn: () => void) => void,
+  }
+}
+
+declare const module: Module
+
 // todo: disable logging on production
 const logger = createLogger({
   duration: true,
@@ -28,7 +36,7 @@ const logger = createLogger({
 
 })
 
-const errorMiddleware = () => next => action => {
+const errorMiddleware = () => (next: any) => (action: any) => {
   try {
     return next(action)
   } catch (error) {
@@ -38,7 +46,7 @@ const errorMiddleware = () => next => action => {
 
 const sagaMiddleware = createSagaMiddleware()
 
-export default function configureStore(initialState = {}, history) {
+export default function configureStore(initialState = {}, history: History) {
   // Compose final middleware and use devtools in debug environment
 
   const allowDebug = process.env.NODE_ENV !== 'production'
@@ -57,7 +65,21 @@ export default function configureStore(initialState = {}, history) {
 
   // Create final store and subscribe router in debug env ie. for devtools
   const store = middleware(createStore)(rootReducer, initialState)
-
   let sagaTask = sagaMiddleware.run(rootSaga)
+
+  if (module.hot) {
+    module.hot.accept('redux/rootReducer', () => {
+      const nextRootReducer = require('redux/rootReducer').default
+      store.replaceReducer(nextRootReducer)
+    })
+
+    module.hot.accept('redux/rootSaga', () => {
+      const newSagas = require('redux/rootSaga').default;
+      sagaTask.cancel()
+      sagaTask.done.then(() => {
+        sagaTask = sagaMiddleware.run(newSagas);
+      })
+    })
+  }
   return store
 }

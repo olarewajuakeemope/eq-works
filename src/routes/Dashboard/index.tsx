@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, RouteComponentProps } from 'react-router-dom'
 import MapLayout from 'layouts/Dashboard/Map'
 import TableLayout from 'layouts/Dashboard/Table'
 import ChartLayout from 'layouts/Dashboard/Chart'
 
-const DashboardRouting = ({ location: { search } }) => (
+const DashboardRouting = ({ location: { search } }: RouteComponentProps<any>) => (
   <Switch>
     <Route path='/map' component={MapLayout} />
     <Route path='/chart' component={ChartLayout} />
