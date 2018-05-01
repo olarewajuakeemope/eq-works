@@ -30,6 +30,15 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader",
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           'file-loader',
@@ -38,6 +47,10 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    modules: [
+      'src',
+      'node_modules',
+    ],
   },
 };

@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'development',
   entry: {
-    app: ['babel-polyfill', 'webpack-hot-middleware/client', './src/index.jsx'],
+    app: ['babel-polyfill', 'webpack-hot-middleware/client', './src/index.tsx'],
   },
   devtool: 'inline-source-map',
   plugins: [

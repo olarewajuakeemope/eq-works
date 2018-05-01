@@ -52,6 +52,8 @@
   },
   "homepage": "https://github.com/EQWorks/ws-product-nodejs#readme",
   "dependencies": {
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "history": "^4.7.2",
@@ -70,6 +72,8 @@
   },
   "devDependencies": {
     "@overra/koa-history-api-fallback": "^2.0.1",
+    "@types/history": "^4.6.2",
+    "awesome-typescript-loader": "^5.0.0",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -92,7 +96,9 @@
     "react-hot-loader": "^4.1.2",
     "redux-freeze": "^0.1.5",
     "sass-loader": "^7.0.1",
+    "source-map-loader": "^0.2.3",
     "style-loader": "^0.21.0",
+    "typescript": "^2.8.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0",
     "webpack-dev-server": "^3.1.3",

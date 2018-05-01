@@ -7,7 +7,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    app: ['babel-polyfill', './src/index.jsx'],
+    app: ['babel-polyfill', './src/index.tsx'],
   },
   devtool: 'source-map',
   plugins: [
