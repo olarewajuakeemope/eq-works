@@ -2,9 +2,9 @@ import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
 import { getStats } from 'api'
 import t from './types'
 
-function* getStatsSaga({ endpoint }) {
+function* getStatsSaga({ endpoint, offset }) {
   try {
-    const stats = yield call(getStats, endpoint)
+    const stats = yield call(getStats, endpoint, offset)
     yield put({ type: t.GET_REQUEST_SUCCESS, stats })
   } catch (error) {
     // TODO: handle errors better
@@ -17,6 +17,7 @@ function* setDefaultStatsSaga() {
     type: t.GET_REQUEST,
     title: 'Events Daily',
     endpoint: '/events/daily',
+    offset: 0,
   })
 }
 

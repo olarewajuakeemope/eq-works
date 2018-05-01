@@ -8,7 +8,7 @@ interface LinkProps {
 }
 const Link = ({ title, endpoint, onClick }: LinkProps) => (
   <div
-    onClick={() => onClick(title, endpoint)}
+    onClick={() => onClick(title, endpoint, 0)}
     className="Table__Component__Sidebar__Content__Link__wrapper">
     <div className="Table__Component__Sidebar__Content__Link__body">
       <div className="Table__Component__Sidebar__Content__link">

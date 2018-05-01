@@ -21,7 +21,7 @@ const Table = ({ rows, isReady }: TableProps) => {
 
   return (
     <Loading loading={!isReady}>
-      {isReady ? table : <div />}
+      {(isReady && rows.length) ? table : <div />}
     </Loading>
   )
 }

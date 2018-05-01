@@ -2,30 +2,40 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import PaginationInput from 'components/Table/Pagination/Input'
-import { getStats } from 'redux/table/selectors'
+import { getStats as getStatsAction } from 'redux/table/actions'
+import { getStats, getStatsTitle, getStatsEndpoint } from 'redux/table/selectors'
 
 const mapStateToProps = (state, props) => {
   return {
     content: getStats(state),
+    title: getStatsTitle(state),
+    endpoint: getStatsEndpoint(state),
   }
+}
+
+const mapDispatchToProps = {
+  getStatsAction,
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const { totalCount } = stateProps.content
+  const { content, title, endpoint } = stateProps
+  const { totalCount, pageNumber } = content
   return {
-    totalCount,
     ...ownProps,
+    pageNumber,
+    totalCount: parseInt(totalCount),
+    onClick: offset => dispatchProps.getStatsAction(title, endpoint, offset),
   }
 }
 
-const PaginationInputContainer = ({ totalCount }) => (
+const PaginationInputContainer = ({ totalCount, onClick, pageNumber }) => (
   <Fragment>
-    <PaginationInput totalCount={totalCount} />
+    <PaginationInput totalCount={totalCount} onClick={onClick} page={pageNumber} />
   </Fragment>
 )
 
 PaginationInputContainer.propTypes = {
-  totalCount: PropTypes.string,
+  totalCount: PropTypes.number,
 }
 
-export default connect(mapStateToProps, null, mergeProps)(PaginationInputContainer)
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(PaginationInputContainer)
