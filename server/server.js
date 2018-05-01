@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.get('/events/hourly', (req, res, next) => {
   req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
-    SELECT date, hour, events
+    SELECT to_char(date, 'DD-MON-YYYY') as date, hour, events
     FROM public.hourly_events
     ORDER BY date, hour
   `
@@ -38,7 +38,7 @@ app.get('/events/hourly', (req, res, next) => {
 app.get('/events/daily', (req, res, next) => {
   req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
-    SELECT date, SUM(events) AS events
+    SELECT to_char(date, 'DD-MON-YYYY') as date, SUM(events) AS events
     FROM public.hourly_events
     GROUP BY date
     ORDER BY date
@@ -49,7 +49,8 @@ app.get('/events/daily', (req, res, next) => {
 app.get('/stats/hourly', (req, res, next) => {
   req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
-    SELECT date, hour, impressions, clicks, revenue
+    SELECT to_char(date, 'DD-MON-YYYY') as date,
+    hour, impressions, clicks, round(revenue, 2)
     FROM public.hourly_stats
     ORDER BY date, hour
   `
@@ -59,10 +60,10 @@ app.get('/stats/hourly', (req, res, next) => {
 app.get('/stats/daily', (req, res, next) => {
   req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
-    SELECT date,
+    SELECT to_char(date, 'DD-MON-YYYY') as date,
         SUM(impressions) AS impressions,
         SUM(clicks) AS clicks,
-        SUM(revenue) AS revenue
+        round(SUM(revenue), 2) AS revenue
     FROM public.hourly_stats
     GROUP BY date
     ORDER BY date

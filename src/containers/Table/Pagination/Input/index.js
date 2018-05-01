@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import Pagination from 'components/Table/Pagination'
+import Pagination from 'components/Table/Pagination/Input'
 import { isLoading, getStats } from 'redux/table/selectors'
 
 const mapStateToProps = (state, props) => {
@@ -13,9 +13,8 @@ const mapStateToProps = (state, props) => {
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   const { content, isReady } = stateProps
-  const { rows, totalCount } = content
+  const { totalCount } = content
   return {
-    rows,
     totalCount,
     isReady,
     ...ownProps,
