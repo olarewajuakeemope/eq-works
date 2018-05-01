@@ -5,7 +5,7 @@ import './style.css'
 const links = [
   {
     name: 'Tables',
-    link: '/stats',
+    link: '/table',
   },
   {
     name: 'Charts',

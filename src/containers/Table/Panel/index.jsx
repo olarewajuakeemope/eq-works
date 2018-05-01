@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import StatsLayout from 'layouts/Dashboard/Stats/StatsPanel'
+import TableLayout from 'layouts/Dashboard/Table/Panel'
 import Loading from 'components/Common/Loading'
 import { isLoading } from 'redux/stats/selectors'
 
@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => {
 
 const StatsPanel = ({ isReady }) => (
   <Loading loading={!isReady}>
-    {isReady ? <StatsLayout /> : <div />}
+    {isReady ? <TableLayout /> : <div />}
   </Loading>
 )
 
