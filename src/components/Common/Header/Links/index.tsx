@@ -18,7 +18,7 @@ const links = [
 ]
 
 const Links = () => (
-  <div className='Links'>
+  <div className="Links">
     {links.map(({ link, name }, i) => <Link key={i} link={link} name={name} />)}
   </div>
 )

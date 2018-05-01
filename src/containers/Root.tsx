@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'react-router-redux'
 import { hot } from 'react-hot-loader'
 import Routes from 'routes'
 
-const Root = ({ history, store }) => (
+const Root = ({ history, store }: any) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Routes/>

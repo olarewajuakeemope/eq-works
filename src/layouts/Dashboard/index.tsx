@@ -5,8 +5,8 @@ import DashboardRouting from 'routes/Dashboard'
 import './style.css'
 
 const DashboardLayout = () => (
-  <div className='DashboardLayout'>
-    <div className='HeaderBar'>
+  <div className="DashboardLayout">
+    <div className="HeaderBar">
       <Header />
     </div>
     <Route component={DashboardRouting} />

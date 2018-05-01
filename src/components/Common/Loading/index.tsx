@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './style.css'
 
-const Loading = ({ bullets = 4, delay = 75, delayUnit = 'ms', loading = false, children }) => {
+interface LoadingProps {
+  bullets?: number
+  delay?: number
+  delayUnit?: string
+  loading?: boolean
+  children: ReactNode
+}
+
+const Loading = ({ bullets = 4, delay = 75, delayUnit = 'ms', loading = false, children }: LoadingProps) => {
   const $bullets = [...Array(bullets).keys()].map(index => {
     const style = {
       animationDelay: (delay * index) + delayUnit,
@@ -10,13 +18,13 @@ const Loading = ({ bullets = 4, delay = 75, delayUnit = 'ms', loading = false, c
   })
 
   const $loader = !loading ? null : (
-    <div className='Loader'>
+    <div className="Loader">
       {$bullets}
     </div>
   )
 
   return (
-    <div className='Loading'>
+    <div className="Loading">
       {$loader}
       {children}
     </div>

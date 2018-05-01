@@ -3,7 +3,7 @@ import Content from './Content'
 import './style.css'
 
 const SideBar = () => (
-  <div className='Table__Component__sidebar'>
+  <div className="Table__Component__sidebar">
     <Content />
   </div>
 )

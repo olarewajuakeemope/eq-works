@@ -4,7 +4,7 @@ import './style.css'
 
 const Header = () => (
   <Fragment>
-    <div className='Header'>
+    <div className="Header">
       <Links />
     </div>
   </Fragment>

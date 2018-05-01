@@ -6,9 +6,9 @@ import ChartLayout from 'layouts/Dashboard/Chart'
 
 const DashboardRouting = ({ location: { search } }: RouteComponentProps<any>) => (
   <Switch>
-    <Route path='/map' component={MapLayout} />
-    <Route path='/chart' component={ChartLayout} />
-    <Route path='/table' component={TableLayout} />
+    <Route path="/map" component={MapLayout} />
+    <Route path="/chart" component={ChartLayout} />
+    <Route path="/table" component={TableLayout} />
     <Redirect
       to={{
         pathname: '/table',
