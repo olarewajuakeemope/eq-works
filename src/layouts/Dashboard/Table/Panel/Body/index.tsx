@@ -6,7 +6,9 @@ import './style.css'
 const BodyLayout = () => (
   <div className="Dashboard__Table__Panel__Body">
     <PaginationBodyContainer />
-    <PaginationInputContainer />
+    <div>
+      <PaginationInputContainer />
+    </div>
   </div>
 )
 

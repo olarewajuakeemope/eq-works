@@ -1,18 +1,41 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
+.Table__Component__Pagination__Input__wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid rgb(62, 184, 241);
 }
 
-th, td {
-    text-align: left;
-    padding: 8px;
+.Table__Component__Pagination__Input__pagination {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.Table__Component__Pagination__Input__Pagination__item {
+    float: left;
 }
 
-th {
-    background-color: rgb(53, 183, 243);
-    color: white;
+.Table__Component__Pagination__Input__pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.Table__Component__Pagination__Input__active {
+    background-color: rgb(62, 184, 241);
+    color: white !important;
+    border: 1px solid rgb(62, 184, 241);
+}
+
+.Table__Component__Pagination__Input__disabled {
+    display: none;
+}
+
+.Table__Component__Pagination__Input__pagination a:hover:not(.active) {
+    background-color: #ddd;
 }
