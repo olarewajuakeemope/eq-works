@@ -1,0 +1,23 @@
+.TableLayout {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+.TableLayout__header {
+  display: flex;
+  justify-content: space-between;
+  flex: none;
+  height: 54px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.TableLayout__body {
+  display: flex;
+  flex: 1;
+}
+
+.TableLayout__table {
+  display: flex;
+  flex: 1;
+}

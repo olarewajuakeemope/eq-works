@@ -1,0 +1,7 @@
+.TableBody {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  background: #efeff4;
+}

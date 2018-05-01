@@ -4,12 +4,16 @@ import './style.css'
 
 const links = [
   {
-    name: 'Map',
-    link: '/map',
+    name: 'Tables',
+    link: '/stats',
   },
   {
-    name: 'Stats',
-    link: '/stats',
+    name: 'Charts',
+    link: '/chart',
+  },
+  {
+    name: 'Map',
+    link: '/map',
   },
 ]
 

@@ -3,7 +3,7 @@ import './style.css'
 
 const Link = ({ title, endpoint, onClick }) => (
   <div
-    onClick={() => onClick(endpoint)}
+    onClick={() => onClick(title, endpoint)}
     className='SideBar__content__component'>
     <div className='SideBar__content__wrapper'>
       <div className='SideBar__content__body'>

@@ -10,7 +10,11 @@ const limitRate = rateLimitter()
 app.use(cors({
   origin: ['http://localhost:3000'],
   methods: ['POST', 'GET'],
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'],
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type','Accept',
+  ],
 }))
 
 // apply middleware

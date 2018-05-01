@@ -1,14 +1,26 @@
-import { takeEvery, fork, call } from 'redux-saga/effects'
+import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
 import { getStats } from '../../api'
 import * as t from './actionTypes'
 
-export function* getStatsSaga({ endpoint }) {
+function* getStatsSaga({ title, endpoint }) {
   try {
     const stats = yield call(getStats, endpoint)
-    console.log(stats)
+    yield put({
+      type: t.GET_REQUEST_SUCCESS,
+      stats: { ...stats, title },
+    })
   } catch (error) {
-    // TODO: handle error
+    // TODO: handle errors better
+    yield put({ type: t.GET_REQUEST_ERROR, error })
   }
+}
+
+function* setDefaultStatsSaga() {
+  yield put({
+    type: t.GET_REQUEST,
+    title: 'Events Daily',
+    endpoint: '/events/daily',
+  })
 }
 
 function* watchGetStatsSaga() {
@@ -16,5 +28,8 @@ function* watchGetStatsSaga() {
 }
 
 export default function* () {
-  yield fork(watchGetStatsSaga)
+  yield all([
+    fork(watchGetStatsSaga),
+    fork(setDefaultStatsSaga),
+  ])
 }

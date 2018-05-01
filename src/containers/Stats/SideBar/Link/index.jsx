@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import Link from '../../components/SideBar/Content/Link'
-import { getStats } from '../../redux/stats/actions'
+import Link from '../../../../components/SideBar/Content/Link'
+import { getStats } from '../../../../redux/stats/actions'
 
 const mapDispatchToProps = {
   getStats,

@@ -5,10 +5,20 @@ const ACTION_HANDLERS = {
     ...state,
     isLoading: true,
   }),
+  [t.GET_REQUEST_SUCCESS]: (state, { stats }) => ({
+    ...state,
+    stats,
+    isLoading: false,
+  }),
+  [t.GET_REQUEST_ERROR]: state => ({
+    ...state,
+    isLoading: false,
+  }),
 }
 
 const initialState = {
-  isLoading: false,
+  stats: {},
+  isLoading: true,
 }
 
 export default function reducer(state = initialState, action) {
