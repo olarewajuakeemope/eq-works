@@ -1,6 +1,6 @@
 import types from './types'
 
-interface StatsInterface {
+export interface StatsInterface {
   [id: string]: any
 }
 

@@ -9,6 +9,42 @@ export default {
     LIMIT: 16,
     ERROR_MESSAGE,
   },
+  chart: {
+    ERROR_MESSAGE,
+    options: {
+      yAxis: {
+        title: {
+          text: '',
+        },
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+      },
+      plotOptions: {
+        series: {
+          label: {
+             connectorAllowed: false,
+          },
+        },
+      },
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom',
+            },
+          },
+        }],
+      },
+    },
+  },
   application: {
     endpoints: [
       {
