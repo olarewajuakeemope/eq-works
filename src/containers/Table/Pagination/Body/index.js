@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import ErrorBoundary from 'components/Common/ErrorBoundary'
 import PaginationBody from 'components/Table/Pagination/Body'
 import { isLoading, getStats } from 'redux/table/selectors'
+import { constants } from 'config'
 
 const mapStateToProps = (state, props) => {
   return {
@@ -22,9 +24,11 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 }
 
 const PaginationBodyContainer = ({ isReady, rows }) => (
-  <Fragment>
-    <PaginationBody isReady={isReady} rows={rows} />
-  </Fragment>
+    <ErrorBoundary message={constants.pagination.ERROR_MESSAGE}>
+      <Fragment>
+        <PaginationBody isReady={isReady} rows={rows} />
+      </Fragment>
+    </ErrorBoundary>
 )
 
 PaginationBodyContainer.propTypes = {

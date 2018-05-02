@@ -19,20 +19,17 @@ class Input extends PureComponent {
   }
 
   state = {
-    activePage: 1,
+    activePage: this.props.page,
   }
 
   handlePageClick = activePage => {
-    this.setState({ activePage })
     this.props.onClick((activePage * FETCH_LIMIT) - FETCH_LIMIT)
   }
 
   UNSAFE_componentWillReceiveProps({ page }) {
-    if (page === 1) {
-      this.setState({
-        activePage: 1,
-      })
-    }
+    this.setState({
+      activePage: page,
+    })
   }
 
   render() {
@@ -51,13 +48,13 @@ class Input extends PureComponent {
       />
     )
 
-    const table = (
+    const inputWrapper = (
       <div className="Table__Component__Pagination__Input__wrapper">
         {input}
       </div>
     )
 
-    return (<Fragment>{table}</Fragment>)
+    return (<Fragment>{inputWrapper}</Fragment>)
   }
 }
 
