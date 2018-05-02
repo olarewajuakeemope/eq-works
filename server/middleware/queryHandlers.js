@@ -12,7 +12,7 @@ const getRowCount = table => {
 export async function paginateQuery(req, res, next) {
   const { sqlTable, sqlQuery } = req
   const totalCount = await getRowCount(sqlTable)
-  const limit = parseInt(req.query.limit, 10) || 16
+  const limit = parseInt(req.query.limit, 10) || totalCount
   const offset = parseInt(req.query.offset, 10) || 0
   const pageNumber = Math.ceil(((offset) / (limit)) + 1) || 1
 

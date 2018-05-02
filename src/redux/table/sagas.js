@@ -1,10 +1,11 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
 import { getStats } from 'api'
+import { constants } from 'config'
 import t from './types'
 
 function* getStatsSaga({ endpoint, offset }) {
   try {
-    const stats = yield call(getStats, endpoint, offset)
+    const stats = yield call(getStats, endpoint, offset, constants.pagination.LIMIT)
     yield put({ type: t.GET_REQUEST_SUCCESS, stats })
   } catch (error) {
     // TODO: handle errors better

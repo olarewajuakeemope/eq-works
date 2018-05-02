@@ -9,4 +9,24 @@ export default {
     LIMIT: 16,
     ERROR_MESSAGE,
   },
+  application: {
+    endpoints: [
+      {
+        title: 'Events Daily',
+        endpoint: '/events/daily',
+      },
+      {
+        title: 'Events Hourly',
+        endpoint: '/events/hourly',
+      },
+      {
+        title: 'Stats Daily',
+        endpoint: '/stats/daily',
+      },
+      {
+        title: 'Stats Hourly',
+        endpoint: '/stats/hourly',
+      },
+    ],
+  },
 }
