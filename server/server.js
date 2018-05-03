@@ -68,10 +68,14 @@ app.get('/stats/daily', (req, res, next) => {
 }, paginateQuery)
 
 app.get('/poi', (req, res, next) => {
+  const { table, column, maxDate, minDate } = req.query
   req.sqlQuery = `
-    SELECT *
-    FROM public.poi;
-  `
+    SELECT ${table}.${column}, public.poi.lat, public.poi.lon
+        FROM public.poi, ${table}
+        WHERE ${table}.poi_id = public.poi.poi_id
+        AND ${table}.date <= '${maxDate}'
+        AND ${table}.date >= '${minDate}';
+      `
   return next()
 }, handleQuery)
 
