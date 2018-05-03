@@ -57,7 +57,7 @@ export default {
       },
     ],
     options: {
-      googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
+      googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places',
       ERROR_MESSAGE: 'Please check your network connection',
     },
   },
