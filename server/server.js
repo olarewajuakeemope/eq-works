@@ -47,7 +47,7 @@ app.get('/events/daily', (req, res, next) => {
 app.get('/stats/hourly', (req, res, next) => {
   req.sqlQuery = `
     SELECT to_char(date, 'DD-MON-YYYY') as date,
-    hour, impressions, clicks, round(revenue, 2)
+    hour, impressions, clicks, round(revenue, 2) As revenue
     FROM public.hourly_stats
     ORDER BY date, hour
   `
