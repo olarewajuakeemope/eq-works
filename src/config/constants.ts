@@ -56,6 +56,10 @@ export default {
         endpoint: '/stats/daily',
       },
     ],
+    options: {
+      googleMapURL: 'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places',
+      ERROR_MESSAGE: 'Please check your network connection',
+    },
   },
   application: {
     endpoints: [

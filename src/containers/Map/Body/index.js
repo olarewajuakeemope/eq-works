@@ -3,30 +3,28 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import ErrorBoundary from 'components/Common/ErrorBoundary'
 import MapBody from 'components/Map/Body'
-import { isLoading, getStats } from 'redux/map/selectors'
 import { constants } from 'config'
 
+const { googleMapURL, ERROR_MESSAGE } = constants.map.options
 const mapStateToProps = (state, props) => {
-  return {
-    isReady: !isLoading(state),
-    content: getStats(state),
-  }
+  return {}
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const { content, isReady } = stateProps
-  const { rows } = content
   return {
-    rows,
-    isReady,
     ...ownProps,
   }
 }
 
-const MapBodyContainer = ({ isReady, rows }) => (
-    <ErrorBoundary message={constants.pagination.ERROR_MESSAGE}>
+const MapBodyContainer = () => (
+    <ErrorBoundary message={ERROR_MESSAGE}>
       <Fragment>
-        <MapBody isReady={isReady} rows={rows} />
+        <MapBody
+          googleMapURL={googleMapURL}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `94%` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </Fragment>
     </ErrorBoundary>
 )
