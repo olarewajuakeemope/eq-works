@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/events/hourly', (req, res, next) => {
-  req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
     SELECT to_char(date, 'DD-MON-YYYY') as date, hour, events
     FROM public.hourly_events
@@ -36,7 +35,6 @@ app.get('/events/hourly', (req, res, next) => {
 }, paginateQuery)
 
 app.get('/events/daily', (req, res, next) => {
-  req.sqlTable = 'public.hourly_events'
   req.sqlQuery = `
     SELECT to_char(date, 'DD-MON-YYYY') as date, SUM(events) AS events
     FROM public.hourly_events
@@ -47,7 +45,6 @@ app.get('/events/daily', (req, res, next) => {
 }, paginateQuery)
 
 app.get('/stats/hourly', (req, res, next) => {
-  req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
     SELECT to_char(date, 'DD-MON-YYYY') as date,
     hour, impressions, clicks, round(revenue, 2)
@@ -58,7 +55,6 @@ app.get('/stats/hourly', (req, res, next) => {
 }, paginateQuery)
 
 app.get('/stats/daily', (req, res, next) => {
-  req.sqlTable = 'public.hourly_stats'
   req.sqlQuery = `
     SELECT to_char(date, 'DD-MON-YYYY') as date,
         SUM(impressions) AS impressions,

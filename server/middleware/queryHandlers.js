@@ -2,16 +2,16 @@ import pg from 'pg'
 
 const pool = new pg.Pool()
 
-const getRowCount = table => {
-  const query = `SELECT COUNT(*) FROM ${table};`
+const getRowCount = q => {
+  const query = `${q};`
   return pool.query(query).then((r) => {
-    return r.rows[0].count
+    return r.rows.length
   }).catch(err => err)
 }
 
 export async function paginateQuery(req, res, next) {
-  const { sqlTable, sqlQuery } = req
-  const totalCount = await getRowCount(sqlTable)
+  const { sqlQuery } = req
+  const totalCount = await getRowCount(sqlQuery)
   const limit = parseInt(req.query.limit, 10) || totalCount
   const offset = parseInt(req.query.offset, 10) || 0
   const pageNumber = Math.ceil(((offset) / (limit)) + 1) || 1
