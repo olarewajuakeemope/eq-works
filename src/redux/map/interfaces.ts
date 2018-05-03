@@ -1,19 +1,15 @@
 import types from './types'
 
-interface StatsInterface {
-  [id: string]: any
-}
-
 export interface MapState {
   title: string
   endpoint: string
   isLoading: boolean
-  stats: StatsInterface
+  stats: Array<{}>
 }
 
 export interface FetchSuccess {
   type: types.GET_REQUEST_SUCCESS
-  stats: StatsInterface
+  stats: Array<{}>
 }
 
 export interface FetchRequest {

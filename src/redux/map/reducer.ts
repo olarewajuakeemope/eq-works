@@ -24,7 +24,7 @@ const ACTION_HANDLERS: ActionHandler = {
 }
 
 const initialState = {
-  stats: {},
+  stats: [],
   title: '',
   endpoint: '',
   isLoading: false,

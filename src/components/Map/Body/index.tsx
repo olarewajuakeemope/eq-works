@@ -12,11 +12,12 @@ const { GoogleMap, Marker, withGoogleMap, withScriptjs } = googleMap
 
 const onMarkerClustererClick = (markerClusterer: any) => markerClusterer.getMarkers()
 
-const Map = withScriptjs(withGoogleMap(({ markers }: MapProps) => (
-  <Fragment>
+const map = (markers: any) => {
+  const { lon, lat } = markers[0]
+  return (
     <GoogleMap
       defaultZoom={3}
-      defaultCenter={{ lat: 25.0391667, lng: 121.525 }}
+      defaultCenter={{ lat, lng: lon }}
     >
       <MarkerClusterer
         onClick={onMarkerClustererClick}
@@ -24,16 +25,25 @@ const Map = withScriptjs(withGoogleMap(({ markers }: MapProps) => (
         enableRetinaIcons
         gridSize={60}
       >
-        {markers && markers.map((marker: any) => (
+        {markers.map(({ lat, lon }: any, index: number) => (
           <Marker
-            key={marker.photo_id}
-            position={{ lat: marker.latitude, lng: marker.longitude }}
+            key={index}
+            position={{ lat, lng: lon }}
           />
         ))}
       </MarkerClusterer>
     </GoogleMap>
-    <div className="Map__Component__footer" />
-  </Fragment>
-)))
+  )
+}
+
+const Map = withScriptjs(withGoogleMap(({ markers }: MapProps) => {
+  return (
+    <Fragment>
+      {markers.length && map(markers)}
+      <div className="Map__Component__footer" />
+    </Fragment>
+  )
+}
+))
 
 export default Map
