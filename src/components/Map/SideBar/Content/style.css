@@ -1,0 +1,37 @@
+.Map__Component__Sidebar__content {
+  overflow-y: hidden;
+  flex: 1;
+}
+
+.Map__Component__Sidebar__Content__Link__wrapper {
+  cursor: pointer;
+  display: flex;
+  line-height: 16px;
+  height: 105px;
+  padding: 14px 0 0;
+  font-weight: 300;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.Map__Component__Sidebar__Content__Link__wrapper > div {
+  transition: transform 0.25s;
+}
+
+.Map__Component__Sidebar__Content__Link__body {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Map__Component__Sidebar__Content__link {
+  overflow: hidden;
+  height: 34px;
+  width: 239px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 900px;
+  margin-bottom: 10px;
+  letter-spacing: 0;
+  color: rgb(42, 182, 246);
+  line-height: 17px;
+}

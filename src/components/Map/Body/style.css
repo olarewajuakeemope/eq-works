@@ -1,0 +1,11 @@
+.Map__Component__footer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #ffffff;
+    border-top: 2px solid rgb(62, 184, 241);
+}

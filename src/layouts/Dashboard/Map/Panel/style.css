@@ -1,0 +1,23 @@
+.Dashboard__Map__Panel__Layout {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+.Dashboard__Map__Panel__Layout__header {
+  display: flex;
+  justify-content: space-between;
+  flex: none;
+  height: 54px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.Dashboard__Map__Panel__Layout__body {
+  display: flex;
+  flex: 1;
+}
+
+.Dashboard__Map__Panel__Layout__map {
+  display: flex;
+  flex: 1;
+}

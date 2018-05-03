@@ -45,6 +45,18 @@ export default {
       },
     },
   },
+  map: {
+    sidebar: [
+      {
+        title: 'Events',
+        endpoint: '/events/daily',
+      },
+      {
+        title: 'Stats',
+        endpoint: '/stats/daily',
+      },
+    ],
+  },
   application: {
     endpoints: [
       {
