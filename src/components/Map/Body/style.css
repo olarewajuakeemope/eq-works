@@ -9,3 +9,8 @@
     background-color: #ffffff;
     border-top: 2px solid rgb(62, 184, 241);
 }
+
+.Loading .Loader {
+    width: 100%;
+    height: 100%;
+}

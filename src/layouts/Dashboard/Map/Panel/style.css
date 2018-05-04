@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   flex: none;
-  height: 54px;
+  height: auto;
   border-bottom: 1px solid #dddddd;
 }
 

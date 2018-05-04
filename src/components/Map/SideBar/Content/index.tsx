@@ -5,8 +5,8 @@ import './style.css'
 
 const Content = () => (
   <div className="Map__Component__Sidebar__content">
-    {constants.map.sidebar.map(({ title, endpoint }, i) =>
-      <Link key={i} title={title} endpoint={endpoint} />)}
+    {constants.map.tables.map((title: string, i: number) =>
+      <Link key={i} title={title} />)}
   </div>
 )
 

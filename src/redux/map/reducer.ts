@@ -6,10 +6,8 @@ interface ActionHandler {
 }
 
 const ACTION_HANDLERS: ActionHandler = {
-  [t.GET_REQUEST]: (state, { title, endpoint }: I.FetchRequest) => ({
+  [t.GET_REQUEST]: state => ({
     ...state,
-    title,
-    endpoint,
     isLoading: true,
   }),
   [t.GET_REQUEST_SUCCESS]: (state, { stats }: I.FetchSuccess) => ({
@@ -21,12 +19,15 @@ const ACTION_HANDLERS: ActionHandler = {
     ...state,
     isLoading: false,
   }),
+  [t.SET_TITLE]: (state, { title }: I.SetTitle) => ({
+    ...state,
+    title,
+  }),
 }
 
 const initialState = {
   stats: [],
   title: '',
-  endpoint: '',
   isLoading: false,
 }
 

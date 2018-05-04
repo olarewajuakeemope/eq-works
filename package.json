@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node server/server.js",
     "dev": "nodemon server/server.js --exec babel-node",
-    "client": "babel-node client.js",
+    "client": "babel-node --max-old-space-size=4096 client.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {

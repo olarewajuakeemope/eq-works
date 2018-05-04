@@ -46,16 +46,16 @@ export default {
     },
   },
   map: {
-    sidebar: [
-      {
-        title: 'Events',
-        endpoint: '/events/daily',
-      },
-      {
-        title: 'Stats',
-        endpoint: '/stats/daily',
-      },
-    ],
+    tables: ['events', 'stats'],
+    metrics: {
+      events: ['hour', 'events'],
+      stats: ['hour', 'impressions', 'clicks', 'revenue'],
+    },
+    pgTable: {
+      events: 'hourly_events',
+      stats: 'hourly_stats',
+    },
+    endpoint: '/poi',
     options: {
       googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places',
       ERROR_MESSAGE: 'Please check your network connection',
@@ -81,4 +81,4 @@ export default {
       },
     ],
   },
-}
+} as any

@@ -2,6 +2,8 @@ enum Types {
   GET_REQUEST = 'map/GET_REQUEST',
   GET_REQUEST_SUCCESS = 'map/GET_REQUEST_SUCCESS',
   GET_REQUEST_ERROR = 'map/GET_REQUEST_ERROR',
+
+  SET_TITLE = 'map/SET_TITLE',
 }
 
 export default Types

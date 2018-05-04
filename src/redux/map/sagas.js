@@ -1,10 +1,12 @@
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects'
+import { constants } from 'config'
 import { getStats } from 'api'
 import t from './types'
 
-function* getStatsSaga({ endpoint, offset, query }) {
+function* getStatsSaga({ query }) {
+  const { endpoint } = constants.map
   try {
-    const stats = yield call(getStats, endpoint, offset, null, query)
+    const stats = yield call(getStats, endpoint, 0, null, query)
     yield put({ type: t.GET_REQUEST_SUCCESS, stats })
   } catch (error) {
     // TODO: handle errors better
@@ -19,12 +21,8 @@ function* setDefaultStatsSaga() {
     maxDate: '2017-04-01',
     minDate: '2017-02-01',
   }
-  yield put({
-    type: t.GET_REQUEST,
-    title: 'Events',
-    endpoint: '/poi',
-    query,
-  })
+  yield put({ type: t.SET_TITLE, title: 'events' })
+  yield put({ type: t.GET_REQUEST, query })
 }
 
 function* watchGetStatsSaga() {

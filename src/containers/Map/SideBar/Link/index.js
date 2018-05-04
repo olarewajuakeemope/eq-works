@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
 import Link from 'components/Map/SideBar/Content/Link'
-import { getStats } from 'redux/map/actions'
+import { setTitle } from 'redux/map/actions'
 
 const mapDispatchToProps = {
-  getStats,
+  onClick: setTitle,
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return {
     ...ownProps,
-    onClick: dispatchProps.getStats,
+    ...dispatchProps,
   }
 }
 

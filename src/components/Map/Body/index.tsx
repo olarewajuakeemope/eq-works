@@ -1,11 +1,13 @@
 import React, { Fragment } from 'react'
 import * as googleMap from 'react-google-maps'
+import Loading from 'components/Common/Loading'
 import './style.css'
 
 const { MarkerClusterer } = require('react-google-maps/lib/components/addons/MarkerClusterer')
 
 interface MapProps {
   markers: any
+  isReady: boolean
 }
 
 const { GoogleMap, Marker, withGoogleMap, withScriptjs } = googleMap
@@ -36,12 +38,15 @@ const map = (markers: any) => {
   )
 }
 
-const Map = withScriptjs(withGoogleMap(({ markers }: MapProps) => {
+const Map = withScriptjs(withGoogleMap(({ markers, isReady }: MapProps) => {
+  const mapRenderer = (
+    <Fragment>{map(markers)}</Fragment>
+  )
   return (
-    <Fragment>
-      {markers.length && map(markers)}
+    <Loading loading={!isReady}>
+      {(isReady && markers.length) ? mapRenderer : <div />}
       <div className="Map__Component__footer" />
-    </Fragment>
+    </Loading>
   )
 }
 ))

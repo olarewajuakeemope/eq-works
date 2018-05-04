@@ -3,13 +3,13 @@ import Link from 'components/Table/SideBar/Content/Link'
 import { getStats } from 'redux/table/actions'
 
 const mapDispatchToProps = {
-  getStats,
+  onClick: getStats,
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return {
     ...ownProps,
-    onClick: dispatchProps.getStats,
+    ...dispatchProps,
   }
 }
 
