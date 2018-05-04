@@ -1,8 +1,6 @@
 ## Setup and Run
 
-A few ways to get started, pick the one you're most comfortable with.
-
-All approaches would require a set of environment variables that will be given to you in the problems email:
+Implement Postgres environment setup:
 
 ```bash
 PGHOST=
