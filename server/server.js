@@ -8,7 +8,7 @@ const limitRate = rateLimitter()
 
 // enable CORS
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['*'],
   methods: ['POST', 'GET'],
   allowedHeaders: [
     'Origin',
