@@ -14,17 +14,6 @@ function* getStatsSaga({ query }) {
   }
 }
 
-function* setDefaultStatsSaga() {
-  const query = {
-    table: 'hourly_events',
-    column: 'events',
-    maxDate: '2017-04-01',
-    minDate: '2017-02-01',
-  }
-  yield put({ type: t.SET_TITLE, title: 'events' })
-  yield put({ type: t.GET_REQUEST, query })
-}
-
 function* watchGetStatsSaga() {
   yield takeEvery(t.GET_REQUEST, getStatsSaga)
 }
@@ -32,6 +21,5 @@ function* watchGetStatsSaga() {
 export default function* () {
   yield all([
     fork(watchGetStatsSaga),
-    fork(setDefaultStatsSaga),
   ])
 }

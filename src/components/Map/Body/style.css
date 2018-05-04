@@ -1,4 +1,4 @@
-.Map__Component__footer {
+.Map__Component__Body__footer {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -10,7 +10,9 @@
     border-top: 2px solid rgb(62, 184, 241);
 }
 
-.Loading .Loader {
-    width: 100%;
+.Map__Component__Body__empty {
+    display: flex;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }

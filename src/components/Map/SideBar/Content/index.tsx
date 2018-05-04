@@ -6,7 +6,7 @@ import './style.css'
 const Content = () => (
   <div className="Map__Component__Sidebar__content">
     {constants.map.tables.map((title: string, i: number) =>
-      <Link key={i} title={title} />)}
+      title !== 'default' && <Link key={i} title={title} />)}
   </div>
 )
 

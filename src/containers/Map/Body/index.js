@@ -28,10 +28,6 @@ const MapBodyContainer = ({ markers, isReady }) => (
         <MapBody
           isReady={isReady}
           markers={markers}
-          googleMapURL={googleMapURL}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `94%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
         />
       </Fragment>
     </ErrorBoundary>
@@ -39,7 +35,7 @@ const MapBodyContainer = ({ markers, isReady }) => (
 
 MapBodyContainer.propTypes = {
   isReady: PropTypes.bool,
-  rows: PropTypes.arrayOf(PropTypes.shape({})),
+  markers: PropTypes.arrayOf(PropTypes.shape({})),
 }
 
 export default connect(mapStateToProps, null, mergeProps)(MapBodyContainer)

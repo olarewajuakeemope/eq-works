@@ -46,10 +46,11 @@ export default {
     },
   },
   map: {
-    tables: ['events', 'stats'],
+    tables: ['events', 'stats', 'default'],
     metrics: {
       events: ['hour', 'events'],
       stats: ['hour', 'impressions', 'clicks', 'revenue'],
+      default: [],
     },
     pgTable: {
       events: 'hourly_events',

@@ -1,5 +1,129 @@
 .Map__Header__Component__wrapper {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 400px;
+}
+
+.Map__Header__Component__form,
+.Map__Header__Component__Form__mindate,
+.Map__Header__Component__Form__maxdate,
+.Map__Header__Component__Form__metric {
+  display: flex;
+  flex-direction: row;
+}
+
+.Map__Header__Component__form {
+  width: 100%;
+}
+
+
+.Map__Header__Component__wrapper label {
+  margin: 5px 10px 0 0;
+}
+.Map__Header__Component__form .hidden {
+  font-size: 70%;
+}
+
+.Map__Header__Component__form .error {
+  color: red;
+}
+
+.Map__Header__Component__form .warning {
+  color: chocolate;
+}
+
+.Map__Header__Component__form > div {
+  margin: 10px;
+  padding: 0 10px;
+}
+
+.Map__Header__Component__form input,
+.Map__Header__Component__form select,
+.Map__Header__Component__form label {
+  display: inline-block;
+}
+
+.Map__Header__Component__Form__title {
   font-size: 20px;
   font-weight: 600px;
-  padding: 10px;
+}
+
+.Map__Header__Component__form div:last-child {
+  margin-left: auto;
+}
+
+.Map__Header__Component__Form__submit button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid rgb(62, 184, 241);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.Map__Header__Component__Form__submit button:hover {
+  background-color: rgb(62, 184, 241);
+  color: white;
+}
+
+/* Removes the clear button from date inputs */
+.Map__Header__Component__form input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+.Map__Header__Component__form input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+}
+
+/* Always display the drop down caret */
+.Map__Header__Component__form input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+.Map__Header__Component__form input[type="date"] {
+  -webkit-appearance: none;
+  outline: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 15px;
+  border:1px solid #ecf0f1;
+  background:#ecf0f1;
+  padding:5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.Map__Header__Component__form input[type="date"], focus {
+  color: #95a5a6;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.Map__Header__Component__Form__metric select {
+  /* General styling */
+  height: 30px;
+  width: 110px;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+
+  /* Removes the default <select> styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Positions background arrow image */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: right center;
 }

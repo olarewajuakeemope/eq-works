@@ -8,15 +8,15 @@ interface HeaderPropsInterface {
   pristine: boolean
   submitting: boolean
   handleSubmit: ((event: React.FormEvent<HTMLFormElement>) => void) | undefined
-  reset: ((event: React.MouseEvent<HTMLButtonElement>) => void) | undefined
 }
 
 const renderErrors = ({ touched, error, warning }: any) => (
-  touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))
+  touched && ((error && <div className="hidden error">{error}</div>) ||
+  (warning && <div className="hidden warning">{warning}</div>))
 )
 
-const renderField = ({ input, label, type, meta }: any) => (
-  <div>
+const renderField = ({ input, className, label, type, meta }: any) => (
+  <div className={className}>
     <label>{label}</label>
     <div>
       <input {...input} placeholder={label} type={type}/>
@@ -25,54 +25,53 @@ const renderField = ({ input, label, type, meta }: any) => (
   </div>
 )
 
-const renderSelectField = ({ metrics, input, label, meta }: any) => (
-  <div>
+const renderSelectField = ({ metrics, className, input, label, meta }: any) => (
+  <div className={className}>
     <label>{label}</label>
-    <select {...input}>
-      {
-        metrics.map((metric: string, i: number) =>
-        <option key={i} value={metric}>{metric}</option>)
-      }
-    </select>
-    {renderErrors(meta)}
+    <div>
+      <select {...input}>
+        {
+          metrics.map((metric: string, i: number) =>
+          <option key={i} value={metric}>{metric}</option>)
+        }
+      </select>
+      {renderErrors(meta)}
+    </div>
   </div>
 )
 
-const Header = ({ title, handleSubmit, pristine, reset, submitting }: HeaderPropsInterface) => (
+const Header = ({ title, handleSubmit, pristine, submitting }: HeaderPropsInterface) => (
   <div className="Map__Header__Component__wrapper">
-    <form onSubmit={handleSubmit}>
-      <span>{title.toUpperCase()}</span>
+    <form onSubmit={handleSubmit} className="Map__Header__Component__form">
+      <div className="Map__Header__Component__Form__title">
+        {title.toUpperCase()}
+      </div>
       <Field
         name="minDate"
-        component={renderField}
         label="From"
         type="date"
+        component={renderField}
+        className="Map__Header__Component__Form__mindate"
       />
       <Field
         name="maxDate"
-        component={renderField}
         label="To"
         type="date"
+        component={renderField}
+        className="Map__Header__Component__Form__maxdate"
       />
-      <span>
-        <label>Metric</label>
-        <span>
-          <Field
-            name="column"
-            component={renderSelectField}
-            metrics={title && constants.map.metrics[title]}
-          />
-        </span>
-      </span>
-      <span>
+      <Field
+        name="column"
+        label="Metric"
+        component={renderSelectField}
+        metrics={constants.map.metrics[title || 'default']}
+        className="Map__Header__Component__Form__metric"
+      />
+      <div className="Map__Header__Component__Form__submit">
         <button
           type="submit"
-          disabled={pristine || submitting}>Submit</button>
-        <button
-          type="button"
-          disabled={pristine || submitting}
-          onClick={reset}>Clear Values</button>
-      </span>
+          disabled={pristine || submitting}>search</button>
+      </div>
     </form>
   </div>
 )
