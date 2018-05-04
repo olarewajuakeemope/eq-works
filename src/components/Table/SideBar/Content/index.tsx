@@ -5,7 +5,7 @@ import './style.css'
 
 const Content = () => (
   <div className="Table__Component__Sidebar__content">
-    {constants.application.endpoints.map(({ title, endpoint }, i) =>
+    {constants.application.endpoints.map(({ title, endpoint }: any, i: number) =>
       <Link key={i} title={title} endpoint={endpoint} />)}
   </div>
 )
